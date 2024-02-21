@@ -40,6 +40,8 @@ if [ "$(/usr/lib/python3.9/site-packages/osh/hub/manage.py dumpdata scan.MockCon
         /usr/lib/python3.9/site-packages/osh/hub/scan/fixtures/initial_data.json
 fi
 
+# Start resalloc agent spawner in background
+/usr/bin/resalloc-agent-spawner &
 
 /usr/bin/run-httpd
 # sleep inf

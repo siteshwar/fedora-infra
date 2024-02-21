@@ -16,6 +16,11 @@ RUN dnf copr enable -y @openscanhub/devel
 # been built after a specific commit.
 RUN dnf install -y osh-hub osh-hub-conf-devel openssl krb5-workstation
 
+# resalloc agent spawner should run on the same host as the hub.
+# It modifies the database through helper scripts.
+RUN dnf install -y resalloc-agent-spawner
+COPY configs/resalloc-agent-spawner-config.yaml /etc/resalloc-agent-spawner/config.yaml
+
 # TODO: Shall `/var/log/osh/` be a persistennt path? Shall this log be redirected to another logging
 # service like splunk?
 RUN touch /var/log/osh/hub/hub.log && chown :root /var/log/osh/hub/hub.log
