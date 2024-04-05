@@ -46,7 +46,7 @@ else
 
     # TODO: https://github.com/openscanhub/fedora-infra/issues/12
     # Run a dummy SMTP server in background
-    python3 -m smtpd -n -c DebuggingServer localhost:8025 &> /tmp/emails.log &
+    # python3 -m smtpd -n -c DebuggingServer localhost:8025 &> /tmp/emails.log &
 
     echo "Running resalloc-agent-spawner in the background. Logs would appear in /var/log/resalloc-agent-spawner/agent-spawner.log"
     # This process is watched over by OpenShift (kubernetes) liveness probe.
