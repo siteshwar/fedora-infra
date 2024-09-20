@@ -17,7 +17,7 @@ RUN rm /etc/rpm/macros.image-language-conf
 # RUN dnf copr enable -y @openscanhub/devel
 # TODO: REMOVE `packit/openscanhub-openscanhub-234` WHEN UPSTREAM PR IS MERGED:
 # https://github.com/openscanhub/openscanhub/pull/234
-RUN dnf copr enable -y packit/openscanhub-openscanhub-234
+RUN dnf copr enable -y packit/openscanhub-openscanhub-299
 
 # Keep these here as a reference for debugging in the future.
 # RUN dnf copr enable -y praiskup/resalloc
@@ -76,4 +76,5 @@ USER 1001
 
 # Commands in this path are used by osh-worker-manager
 ENV PATH=/sbin:/bin:/usr/sbin:/usr/bin
+ENV FEDORA_MESSAGING_CONF=/etc/fedora-messaging/fedora-messaging-config.toml
 CMD /run_hub.sh
