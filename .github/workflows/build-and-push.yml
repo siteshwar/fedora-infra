@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test-csmock-pull-189
 jobs:
   build-and-push-osh-hub:
     runs-on: ubuntu-20.04

@@ -34,7 +34,8 @@
 # dnf copr enable @openscanhub/devel
 - name: Enable openscanhub repository
   community.general.copr:
-     name: "@openscanhub/{{ env }}"
+     name: "packit/csutils-csmock-189"
+     chroot: epel-9-x86_64
 
 - name: Install osh-worker package
   ansible.builtin.dnf:
