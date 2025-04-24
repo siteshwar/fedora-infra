@@ -101,8 +101,9 @@
 
 - name: Clone known false positives git repository
   ansible.builtin.git:
-    repo: 'https://github.com/openscanhub/known-false-positives.git'
+    repo: 'https://github.com/siteshwar/known-false-positives.git'
     dest: /tmp/known-false-positives
+    version: test
 
 # It is required to build the RPM
 - name: Install csdiff package
